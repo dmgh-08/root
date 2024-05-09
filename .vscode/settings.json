@@ -1,11 +1,12 @@
 {
-    "search.seedWithNearestWord": true,
-    "editor.suggest.localityBonus": true,
     "editor.cursorSmoothCaretAnimation": "on",
     "terminal.integrated.cursorStyle": "underline",
     "terminal.integrated.cursorBlinking": true,
-    "terminal.integrated.accessibleViewPreserveCursorPosition": true,
     "editor.cursorBlinking": "smooth",
+    "editor.cursorStyle": "line-thin",
     "editor.hideCursorInOverviewRuler": true,
-    "editor.cursorStyle": "line-thin"
+    "terminal.integrated.accessibleViewPreserveCursorPosition": true,
+    "editor.suggest.localityBonus": true,
+    "notebook.navigation.allowNavigateToSurroundingCells": true,
+    "search.seedWithNearestWord": true
 }
