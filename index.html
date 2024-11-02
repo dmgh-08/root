@@ -3,26 +3,185 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <title>Dmgh-08</title>
-    <link rel="icon" type="image/x-icon" href="https://dmgh-08.github.io/root/logo.png">
+    <link rel="icon" href="https://dmgh-08.github.io/root/logo.png" type="image/x-icon">
 
+    <title>CACHH8</title>
     <style>
-        h1{
+        /* Reset and general styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            overflow: hidden;
+            display: flex;
             justify-content: center;
             align-items: center;
-            align-self: center;
-            font-family:'Courier New', Courier, monospace; 
+            height: 100vh;
+            transition: all 0.5s ease;
+        }
+
+        /* Animated background */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, #4a90e2, #a1c4fd, #fbc2eb);
+            background-size: 400% 400%;
+            animation: gradientAnimation 15s ease infinite;
+            z-index: -1;
+        }
+
+        /* Gradient animation keyframes */
+        @keyframes gradientAnimation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Splash screen styling */
+        #splash {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: fadeOut 2s ease forwards;
+            animation-delay: 2s;
+        }
+
+        #splash h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+
+        #splash p {
+            font-size: 1.2rem;
+        }
+
+        /* Main content styling */
+        #main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+        }
+
+        /* Show main content after splash screen fades out */
+        #splash.fade-out + #main-content {
+            display: block;
+            opacity: 1;
+        }
+
+        /* Navbar styling */
+        .navbar {
+            width: 100%;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            top: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar img {
+            width: 50px;
+            height: 50px;
+        }
+
+        .navbar nav a {
+            margin-left: 20px;
+            color: #4a90e2;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .stylish-text {
+            margin-top: 120px;
+            font-size: 2rem;
+            color: #4a90e2;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .button-container a {
+            padding: 10px 20px;
+            margin: 0 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4a90e2;
+            color: white;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        /* Keyframes for fade-out animation */
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
         }
     </style>
 </head>
 <body>
-    <h1>Dmgh-08</h1>
 
-    <a href="https://wa.me/8801972831568/">WhatsApp</a>
-    <a href="https://www.youtube.com/@cachh-08/">YouTube</a>
-    <a href="https://www.facebook.com/">Facebook</a>
+    <!-- Splash screen -->
+    <div id="splash">
+        <img src="https://dmgh-08.github.io/root/logo.png" alt="Logo">
+        <h1>Care & Cure Homeo Hall</h1>
+        <p>Let's get started ...</p>
+    </div>
+
+    <!-- Main content -->
+    <div id="main-content">
+        <!-- Navbar -->
+        <div class="navbar">
+            <img src="https://dmgh-08.github.io/root/logo.png" alt="Logo">
+            <nav>
+                <a href="https://wa.me/8801972831568/">Book A Visit</a>
+            </nav>
+        </div>
+
+        <!-- Stylish text -->
+        <div class="stylish-text">Dr.MD Golam Hossain.</div>
+
+        <!-- Contact buttons -->
+        <div class="button-container">
+            <a href="tel:+8801712831568">Call</a>
+            <a href="mailto:drmdgolamhossain.08@gmail.com">Mail</a>
+        </div>
+    </div>
+
+    <script>
+        // Fade out splash screen and show main content
+        window.addEventListener("load", () => {
+            const splash = document.getElementById("splash");
+            splash.classList.add("fade-out");
+
+            splash.addEventListener("animationend", () => {
+                splash.style.display = "none";
+                document.getElementById("main-content").style.display = "block";
+            });
+        });
+    </script>
 </body>
-<footer>
-</footer>
 </html>
